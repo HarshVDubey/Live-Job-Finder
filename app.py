@@ -1,5 +1,4 @@
 import streamlit as st
-import requests
 import fitz  # PyMuPDF
 import os
 from euriai import EuriaiClient
@@ -11,11 +10,11 @@ load_dotenv()
 
 # Initialize clients
 euriai_client = EuriaiClient(
-    api_key=st.secrets["EURI_API_KEY"],
+    api_key=os.getenv("EURI_API_KEY"),
     model="gpt-4.1-nano"
 )
 
-apify_client = ApifyClient(st.secrets["APIFY_API_KEY"])
+apify_client = ApifyClient(os.getenv("APIFY_API_KEY"))
 
 # Extract text from uploaded PDF
 def extract_text_from_pdf(uploaded_file):
@@ -107,5 +106,3 @@ if uploaded_file:
                 st.markdown("---")
         else:
             st.warning("No Naukri jobs found.")
-
-
