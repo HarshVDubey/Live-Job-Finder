@@ -1,6 +1,7 @@
 streamlit
-requests
-PyMuPDF
 euriai
+pymupdf
 python-dotenv
 apify-client
+fastmcp
+langchain
