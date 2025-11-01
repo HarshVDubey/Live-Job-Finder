@@ -15,7 +15,7 @@ euriai_client = EuriaiClient(
     model="gpt-4.1-nano"
 )
 
-apify_client = ApifyClient(st.secrets("APIFY_API_KEY"))
+apify_client = ApifyClient(st.secrets["APIFY_API_KEY"])
 
 # Extract text from uploaded PDF
 def extract_text_from_pdf(uploaded_file):
@@ -107,4 +107,5 @@ if uploaded_file:
                 st.markdown("---")
         else:
             st.warning("No Naukri jobs found.")
+
 
